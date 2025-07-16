@@ -15,13 +15,13 @@ function Game() {
 
   function addGuesses(guess) {
     const nextGuesses = [...guesses, guess];
-    console.log(nextGuesses);
+
     setGuesses(nextGuesses);
   }
 
   return (
     <>
-      <GuessResults guesses={guesses} />
+      <GuessResults guesses={guesses} answer={answer} />
       <GuessInput addGuesses={addGuesses} />
     </>
   );
