@@ -15,7 +15,7 @@ function Game() {
 
   function addGuesses(guess) {
     const nextGuesses = [...guesses, guess];
-
+    console.log(nextGuesses);
     setGuesses(nextGuesses);
   }
 
