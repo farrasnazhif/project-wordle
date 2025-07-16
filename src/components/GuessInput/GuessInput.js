@@ -19,12 +19,14 @@ function GuessInput({ addGuesses }) {
         id="guess-input"
         type="text"
         value={guess}
+        maxLength={5}
+        pattern="[a-zA-Z]{5}"
         onChange={(event) => {
           const nextGuess = event.target.value.toUpperCase();
           setGuess(nextGuess);
         }}
       />
-      <p>{guess}</p>
+      {/* <p>{guess}</p> */}
     </form>
   );
 }
