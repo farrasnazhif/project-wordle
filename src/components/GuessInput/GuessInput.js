@@ -1,13 +1,13 @@
 import React from "react";
 
-function GuessInput({ addGuesses }) {
+function GuessInput({ handleSubmitGuess, gameStatus }) {
   const [guess, setGuess] = React.useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
 
     console.log({ guess });
-    addGuesses(guess);
+    handleSubmitGuess(guess);
 
     setGuess("");
   }
@@ -15,7 +15,9 @@ function GuessInput({ addGuesses }) {
   return (
     <form className="guess-input-wrapper" onSubmit={handleSubmit}>
       <label htmlFor="guess-input">Enter guess:</label>
+
       <input
+        disabled={gameStatus !== "running"}
         required={true}
         id="guess-input"
         type="text"
@@ -27,6 +29,7 @@ function GuessInput({ addGuesses }) {
           setGuess(nextGuess);
         }}
       />
+
       {/* <p>{guess}</p> */}
     </form>
   );
